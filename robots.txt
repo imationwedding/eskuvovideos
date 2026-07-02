@@ -1,0 +1,7 @@
+# robots.txt – eskuvovideos.hu
+# Minden keresőrobot beolvashatja a teljes oldalt.
+User-agent: *
+Allow: /
+
+# A sitemap helye
+Sitemap: https://eskuvovideos.hu/sitemap.xml
