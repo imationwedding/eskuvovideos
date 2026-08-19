@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Google Tag Manager -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -244,6 +244,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pf__overlay .nm{font-family:var(--f-script);font-size:1.85rem;line-height:1}
 .pf__overlay .ttl{font-family:var(--f-display);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:.2rem}
 .pf-more{margin-top:clamp(2rem,3.5vw,2.8rem);text-align:center}
+.tst-more{margin-top:clamp(2.4rem,4vw,3.4rem);text-align:center}
 
 /* ---------------- ÁRAK ---------------- */
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(1.2rem,2.6vw,2rem);margin-top:clamp(2.6rem,4vw,3.6rem);align-items:start}
@@ -274,13 +275,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ---------------- VÉLEMÉNYEK (placeholder) ---------------- */
 .tst{background:var(--paper-2)}
 .tst-note{margin:1rem auto 0;font-size:.84rem;color:var(--muted-2);font-style:italic}
-.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(1.2rem,2.6vw,2rem);margin-top:clamp(2.4rem,4vw,3.2rem)}
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;gap:clamp(1.2rem,2.6vw,2rem);margin-top:clamp(2.4rem,4vw,3.2rem)}
 .tst-grid--single{max-width:620px;margin-inline:auto;grid-template-columns:1fr}
 .tst__card{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:2.1rem 1.9rem 1.9rem;display:flex;flex-direction:column;gap:1.1rem}
 .tst__stars{display:flex;gap:.25rem;color:var(--gold)}
 .tst__stars svg{width:16px;height:16px;fill:currentColor}
-.tst__quote{margin:0;color:var(--ink-2);font-size:1.08rem;line-height:1.7;flex:1}
-.tst__who{display:flex;align-items:center;gap:.95rem;border-top:1px solid var(--line);padding-top:1.2rem}
+.tst__quote{margin:0;color:var(--ink-2);font-size:1.08rem;line-height:1.7;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;line-clamp:6;overflow:hidden}
+.tst__quote.is-expanded{-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+.tst__more{align-self:flex-start;background:none;border:0;padding:0;color:var(--gold);font-family:var(--f-display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:opacity .2s}
+.tst__more:hover{opacity:.7}
+.tst__who{display:flex;align-items:center;gap:.95rem;margin-top:auto;border-top:1px solid var(--line);padding-top:1.2rem}
 .tst__avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line-2)}
 .tst__who-text{display:flex;flex-direction:column;gap:.2rem}
 .tst__who .nm{font-family:var(--f-script);font-size:1.55rem;line-height:1;color:var(--ink)}
@@ -472,6 +476,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFCB5MD6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ================= NAVBAR ================= -->
 <header class="nav" id="nav">
@@ -637,12 +644,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
         <div class="pf__overlay"><div class="nm">Zsuzsi &amp; Peti</div><div class="ttl">Highlight film</div></div>
       </div>
-      <div class="pf reveal play-target" data-yt="mzi2pTqc8KI" role="button" tabindex="0" aria-label="Szandra és István esküvői filmjének lejátszása">
+      <div class="pf reveal play-target" data-yt="VfWWa1saVyQ" role="button" tabindex="0" aria-label="Cintia és Ábel esküvői filmjének lejátszása">
         <div class="pf__frame">
-          <img class="pf__img" src="szandra-es-istvan-eskuvoi-video-imation-wedding.jpg" width="1280" height="720" loading="lazy" alt="Szandra &amp; István esküvői highlight film – Imation wedding">
+          <img class="pf__img" src="cintia-es-abel-eskuvoi-video-imation-wedding.jpg" width="1280" height="720" loading="lazy" alt="Cintia &amp; Ábel esküvői highlight film – Imation wedding">
         </div>
         <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <div class="pf__overlay"><div class="nm">Szandra &amp; István</div><div class="ttl">Highlight film</div></div>
+        <div class="pf__overlay"><div class="nm">Cintia &amp; Ábel</div><div class="ttl">Highlight film</div></div>
       </div>
     </div>
     <div class="pf-more reveal">
@@ -749,6 +756,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <figure class="tst__card reveal">
           <div class="tst__stars" aria-label="5 / 5 csillag"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg></div>
           <blockquote class="tst__quote">„Köszönjük a profi és alapos munkádat! Az egész vendégsereg oda van a videóért! :) Visszaadja a meghitt és vidám hangulatokat is, és az egész nap varázsát!”</blockquote>
+          <button class="tst__more" type="button" hidden>Tovább</button>
           <figcaption class="tst__who">
             <img class="tst__avatar" src="zsuzsi-es-peti-velemeny-imation-wedding.jpg" width="56" height="56" loading="lazy" alt="Zsuzsi és Peti – Imation wedding esküvői pár">
             <span class="tst__who-text"><span class="nm">Zsuzsi &amp; Peti</span><span class="loc">Ballószög · 2026</span></span>
@@ -757,11 +765,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <figure class="tst__card reveal">
           <div class="tst__stars" aria-label="5 / 5 csillag"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg></div>
           <blockquote class="tst__quote">„Gábor készítette az esküvői videónkat. Rugalmas, precíz, jó ötletei voltak. Egy életre szóló emléket kaptunk tőle. Gyorsan el is készült a kisfilmünk. 🥰 Maximálisan meg voltunk vele elégedve, csak ajánlani tudjuk! 😊”</blockquote>
+          <button class="tst__more" type="button" hidden>Tovább</button>
           <figcaption class="tst__who">
             <img class="tst__avatar" src="szandra-es-istvan-velemeny-imation-wedding.jpg" width="56" height="56" loading="lazy" alt="Szandra és István – Imation wedding esküvői pár">
             <span class="tst__who-text"><span class="nm">Szandra &amp; István</span><span class="loc">Dusnok · 2026</span></span>
           </figcaption>
         </figure>
+        <figure class="tst__card reveal">
+          <div class="tst__stars" aria-label="5 / 5 csillag"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9.9-5 4.8 1.2 6.8L12 17.8 5.9 20.8 7.1 14l-5-4.8 6.9-.9z"/></svg></div>
+          <blockquote class="tst__quote">„Gábor munkájával nagyon elégedettek vagyunk. Az esküvő napján végig profi volt, mégis szinte észrevétlenül dolgozott, így minden természetesen zajlott. A videó pedig egyszerűen fantasztikus lett. Nagyon jól visszaadja a nap hangulatát és az érzelmeket, a zene, a vágás és a felvételek tökéletesen összeillenek. Minden alkalommal örömmel nézzük vissza, és újra átéljük az esküvőnk legszebb pillanatait. Köszönjük ezt a csodás emléket, csak ajánlani tudjuk!”</blockquote>
+          <button class="tst__more" type="button" hidden>Tovább</button>
+          <figcaption class="tst__who">
+            <img class="tst__avatar" src="kristof-es-dora-velemeny-imation-wedding.jpg" width="56" height="56" loading="lazy" alt="Kristóf és Dóra – Imation wedding esküvői pár">
+            <span class="tst__who-text"><span class="nm">Kristóf &amp; Dóra</span><span class="loc">Bugyi · 2026</span></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="tst-more reveal">
+        <a class="btn btn--ghost" href="https://www.google.hu/maps/place/Imation+Wedding+-+Esküvői+videós/@47.4813274,18.9654974,11z/data=!4m8!3m7!1s0x55e9b8d4480c6a5:0xfd203f2624eb6f5c!8m2!3d47.4812134!4d19.130303!9m1!1b1!16s%2Fg%2F11yn3hg5bn" target="_blank" rel="noopener">Összes értékelés a Google-on →</a>
       </div>
     </div>
   </section>
@@ -1137,6 +1158,29 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       video.load();          /* preload="none" → visszaáll a poszterképre */
       playBtn.hidden=false;
     });
+  })();
+
+  /* ---- Vélemények: hosszú szöveg levágása + "Tovább" kinyitás ---- */
+  (function(){
+    var cards=document.querySelectorAll('.tst__card');
+    if(!cards.length) return;
+    cards.forEach(function(card){
+      var q=card.querySelector('.tst__quote'), btn=card.querySelector('.tst__more');
+      if(!q||!btn) return;
+      btn.addEventListener('click', function(){
+        var ex=q.classList.toggle('is-expanded');
+        btn.textContent = ex ? 'Kevesebb' : 'Tovább';
+      });
+    });
+    function checkClamp(){
+      cards.forEach(function(card){
+        var q=card.querySelector('.tst__quote'), btn=card.querySelector('.tst__more');
+        if(!q||!btn||q.classList.contains('is-expanded')) return;
+        btn.hidden = !(q.scrollHeight > q.clientHeight + 2);
+      });
+    }
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(checkClamp); } else { checkClamp(); }
+    window.addEventListener('resize', checkClamp);
   })();
 
   /* ---- price "Megrendelem" prefills the message ---- */
