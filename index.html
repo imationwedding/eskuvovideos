@@ -3,24 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WFCB5MD6');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ERPKQ1VFWM"></script>
+<!-- Google Analytics + Tag Manager: csak a süti-sávon adott hozzájárulás után töltődik be -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ERPKQ1VFWM');
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+  window.loadAnalytics = function(){
+    if (window.__analyticsLoaded) return;
+    window.__analyticsLoaded = true;
+    gtag('consent','update',{analytics_storage:'granted'});
+    var g=document.createElement('script'); g.async=true;
+    g.src='https://www.googletagmanager.com/gtag/js?id=G-ERPKQ1VFWM';
+    document.head.appendChild(g);
+    gtag('js', new Date());
+    gtag('config', 'G-ERPKQ1VFWM');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WFCB5MD6');
+  };
+  try { if (localStorage.getItem('cookieConsent')==='accepted') window.loadAnalytics(); } catch(e) {}
 </script>
-<!-- End Google tag -->
+<!-- End Google Analytics + Tag Manager -->
 <title>Esküvői videós – 4K esküvői filmek | Imation wedding</title>
-<meta name="description" content="Esküvői videós Budapesten és országszerte: elegáns, filmszerű esküvői videó 4K minőségben, drónnal és tiszta hanggal. Highlight és dokumentarista film, gyors átadás – kérj ajánlatot!">
+<meta name="description" content="Esküvői videós Budapesten és országszerte: elegáns, filmszerű esküvői videó 4K minőségben, drónnal és tiszta hanggal. Highlight és dokumentarista film, letölthető átadás – kérj ajánlatot!">
 <meta name="keywords" content="esküvői videós, esküvői videó, esküvői film, esküvő videó, 4K esküvői videó, drónos esküvői videó, esküvői videózás Budapest, highlight film, dokumentarista esküvői film">
 <meta name="author" content="Pátrovics Gábor – Imation wedding">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -32,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="Imation wedding – Esküvői videós">
 <meta property="og:url" content="https://eskuvovideos.hu/">
 <meta property="og:title" content="Esküvői videós – 4K esküvői filmek | Imation wedding">
-<meta property="og:description" content="Elegáns, filmszerű esküvői videó 4K minőségben, drónnal és tiszta hanggal. Highlight és dokumentarista csomag, gyors átadás.">
+<meta property="og:description" content="Elegáns, filmszerű esküvői videó 4K minőségben, drónnal és tiszta hanggal. Highlight és dokumentarista csomag, letölthető átadás.">
 <meta property="og:image" content="https://eskuvovideos.hu/og-image.jpg">
 <meta property="og:image:secure_url" content="https://eskuvovideos.hu/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -165,16 +172,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .hero__title em{font-style:normal;color:var(--gold)}
 .hero__sub{max-width:60ch;margin:1.15rem auto 0;text-align:center;color:var(--muted);font-size:1.04rem}
 .hero__cta{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
-.hero__reel{position:relative;margin-top:clamp(2.6rem,5vw,4rem);aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:radial-gradient(120% 120% at 30% 20%,#4a4843 0%,#2a2825 45%,#1b1a18 100%)}
-.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;display:block}
+.hero__reel{position:relative;margin-top:clamp(2.6rem,5vw,4rem);aspect-ratio:16/9;border-radius:4px;overflow:hidden;cursor:pointer;background:radial-gradient(120% 120% at 30% 20%,#4a4843 0%,#2a2825 45%,#1b1a18 100%)}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero__reel::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(20,18,16,.26) 0%,rgba(20,18,16,0) 34%)}
-.hero__play{cursor:pointer}
-.hero__play[hidden]{display:none}
-.hero__loader{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;background:rgba(18,16,14,.5);color:#fff}
-.hero__loader[hidden]{display:none}
-.loader-ring{width:44px;height:44px;border-radius:50%;border:3px solid rgba(255,255,255,.22);border-top-color:#fff;animation:heroSpin .9s linear infinite}
-.loader-txt{font-family:var(--f-display);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85)}
-@keyframes heroSpin{to{transform:rotate(360deg)}}
 .hero__reel-meta{position:absolute;left:clamp(1.2rem,3vw,2.2rem);bottom:clamp(1.2rem,3vw,2rem);z-index:4;color:rgba(255,255,255,.94)}
 .hero__reel-meta .sm{font-family:var(--f-display);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.66);margin:0 0 .35rem}
 .hero__reel-meta .lg{font-family:var(--f-display);font-weight:500;font-size:1.05rem;letter-spacing:.04em;margin:0}
@@ -245,6 +245,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .pf__overlay .ttl{font-family:var(--f-display);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:.2rem}
 .pf-more{margin-top:clamp(2rem,3.5vw,2.8rem);text-align:center}
 .tst-more{margin-top:clamp(2.4rem,4vw,3.4rem);text-align:center}
+.pf-more .btn,.tst-more .btn{white-space:normal;text-align:center;justify-content:center;max-width:100%}
 
 /* ---------------- ÁRAK ---------------- */
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(1.2rem,2.6vw,2rem);margin-top:clamp(2.6rem,4vw,3.6rem);align-items:start}
@@ -254,9 +255,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .price__ribbon{position:absolute;top:-12px;right:1.8rem;background:var(--gold);color:#fff;font-family:var(--f-display);font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px}
 .price__name{font-family:var(--f-display);font-weight:500;font-size:1.3rem;letter-spacing:.02em;margin:0;color:var(--ink)}
 .price__desc{margin:0;color:var(--muted);font-size:.95rem;min-height:2.6em}
-.price__amount{display:flex;align-items:baseline;gap:.4rem;padding:.4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price__amount{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .4rem;padding:.4rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .price__amount .num{font-family:var(--f-display);font-weight:300;font-size:clamp(2rem,4vw,2.6rem);color:var(--ink);line-height:1}
 .price__amount .cur{font-family:var(--f-display);font-size:1rem;letter-spacing:.06em;color:var(--gold)}
+.price__amount .old{flex-basis:100%;font-family:var(--f-display);font-size:1.05rem;color:var(--muted-2);text-decoration:line-through;text-decoration-thickness:1px}
+.price__promo{margin:-.4rem 0 0;font-size:.88rem;line-height:1.55;color:var(--muted)}
+.price__promo strong{color:#b3261e;font-weight:600}
+.price__amount .sale{color:#b3261e}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .price__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7rem;flex:1}
 .price__list li{display:flex;gap:.7rem;align-items:flex-start;color:var(--ink-2);font-size:.95rem;line-height:1.55}
 .price__list li svg{flex:none;width:17px;height:17px;margin-top:.18rem;stroke:var(--gold);fill:none;stroke-width:1.8}
@@ -382,6 +388,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ---------------- MODALS (jogi) ---------------- */
 .modal{position:fixed;inset:0;z-index:95;background:rgba(20,18,16,.5);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:1.2rem;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
 .modal.open{opacity:1;visibility:visible}
+.cookie{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;max-width:580px;margin-inline:auto;background:var(--paper);border:1px solid var(--line-2);border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.14);padding:1.1rem 1.3rem;display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.2rem}
+.cookie[hidden]{display:none}
+.cookie p{margin:0;flex:1 1 260px;font-size:.88rem;line-height:1.55;color:var(--ink-2)}
+.cookie a{color:var(--gold);text-decoration:underline}
+.cookie__btns{display:flex;gap:.6rem;flex-wrap:wrap}
 .modal__box{background:var(--paper);border-radius:8px;width:min(720px,100%);max-height:86vh;overflow:auto;padding:2.2rem clamp(1.4rem,4vw,2.6rem)}
 .modal__box h3{font-family:var(--f-display);font-weight:500;font-size:1.3rem;letter-spacing:.02em;margin:0 0 .4rem;color:var(--ink)}
 .modal__sub{font-size:.82rem;color:var(--muted-2);margin:0 0 1.4rem}
@@ -443,8 +454,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   "description":"Esküvői videós Budapesten és országszerte. Elegáns, filmszerű esküvői videó 4K minőségben, drónnal és tiszta hanggal.",
   "url":"https://eskuvovideos.hu/",
   "image":"https://eskuvovideos.hu/og-image.jpg",
-  "email":"hello@imationwedding.hu",
-  "priceRange":"299.990 Ft – 359.990 Ft",
+  "email":"eskuvovideos@gmail.com",
+  "priceRange":"300.000 Ft – 380.000 Ft",
   "vatID":"91411282133",
   "knowsLanguage":"hu",
   "founder":{"@type":"Person","name":"Pátrovics Gábor","jobTitle":"Esküvői videós"},
@@ -454,8 +465,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     "@type":"OfferCatalog",
     "name":"Esküvői videó csomagok",
     "itemListElement":[
-      {"@type":"Offer","name":"Highlight csomag","price":"299990","priceCurrency":"HUF","description":"Profi alapcsomag: 5–7 perces Highlight film, 4K felvétel, drón és mikroportos hang."},
-      {"@type":"Offer","name":"Dokumentarista csomag","price":"359990","priceCurrency":"HUF","description":"Teljes élmény: 50–60 perces dokumentarista film, vendéginterjúk, gyorsított átadás."}
+      {"@type":"Offer","name":"Highlight csomag","price":"300000","priceCurrency":"HUF","description":"Profi alapcsomag: 14 órás rendelkezésre állás, 5–7 perces Highlight film, 4K felvétel, drón és mikroportos hang, 6–8 hetes átadás."},
+      {"@type":"Offer","name":"Dokumentarista csomag","price":"360000","priceCurrency":"HUF","description":"Teljes élmény: 14 órás rendelkezésre állás, 50–60 perces dokumentarista film, gyorsított (4–6 hetes) átadás."}
     ]
   }
 }
@@ -465,20 +476,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Milyen időtartamra érhető el a szolgáltatás?","acceptedAnswer":{"@type":"Answer","text":"Alapesetben 10:00–01:00 (következő nap) között dolgozom. Ettől eltérő igény egyedi megállapodással lehetséges."}},
+    {"@type":"Question","name":"Milyen időtartamra érhető el a szolgáltatás?","acceptedAnswer":{"@type":"Answer","text":"Alapesetben 11:00-tól hajnali 1:00-ig, 14 órán át dolgozom. Ettől eltérő igény egyedi megállapodással lehetséges."}},
     {"@type":"Question","name":"Kell foglalót fizetni?","acceptedAnswer":{"@type":"Answer","text":"Igen. A foglaló összege 50.000 Ft; a dátum a foglaló beérkezésével rögzül."}},
     {"@type":"Question","name":"Mi történik lemondás esetén?","acceptedAnswer":{"@type":"Answer","text":"Megrendelő lemondásakor a foglaló nem jár vissza, a lemondás okától függetlenül."}},
-    {"@type":"Question","name":"Mennyi a kiszállási díj?","acceptedAnswer":{"@type":"Answer","text":"Budapest közigazgatási határán belül díjmentes. Azon kívül 110 Ft/km (oda-vissza); parkolás és útdíj külön egyeztetés szerint."}},
-    {"@type":"Question","name":"Mennyi idő alatt készül el a film?","acceptedAnswer":{"@type":"Answer","text":"Az utómunka legfeljebb 6 hét az esküvőt követően. A Dokumentarista csomagnál gyorsított, 2–4 hetes átadással."}},
+    {"@type":"Question","name":"Mennyi a kiszállási díj?","acceptedAnswer":{"@type":"Answer","text":"Budapest közigazgatási határán belül díjmentes. Azon kívül Budapesttől számítva 120 Ft/km (oda-vissza); parkolás és útdíj külön egyeztetés szerint. Külföldi helyszín esetén egyedi árajánlatot adok."}},
+    {"@type":"Question","name":"Mennyi idő alatt készül el a film?","acceptedAnswer":{"@type":"Answer","text":"A Highlight csomag várható átadási ideje 6–8 hét, a Dokumentarista csomagé gyorsítottan 4–6 hét az esküvőt követően."}},
     {"@type":"Question","name":"Megkapom a nyersanyagot (vágatlan felvételeket)?","acceptedAnswer":{"@type":"Answer","text":"A nyers, vágatlan felvételek nem kerülnek átadásra. A kész, gondosan megvágott filmeket adom át, így mindig a legszebb, történetté formált változatot kapjátok."}}
   ]
 }
 </script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WFCB5MD6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <!-- ================= NAVBAR ================= -->
 <header class="nav" id="nav">
@@ -543,21 +551,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <a href="#kapcsolat" class="btn btn--ghost">Kérj ajánlatot</a>
     </div>
 
-    <!-- Bemutató teaser — HELYI videófájlból (teaser.mp4).
-         preload="none" → a videó csak kattintásra töltődik le, így az oldal gyorsan betölt.
-         A poszter (borítókép) azonnal látszik; kattintásra töltőjelző, majd a videó natív vezérlőkkel (némítható). -->
-    <div class="hero__reel grain play-target reveal" id="teaserWrap">
-      <video id="teaserVideo" class="hero__video" poster="eskuvoi-videos-imation-wedding-bemutato-borito.jpg" preload="none" playsinline>
-        <source src="teaser.mp4" type="video/mp4">
-        A böngésződ nem támogatja a videó lejátszását. <a href="teaser.mp4">Töltsd le a videót.</a>
-      </video>
-      <button class="play hero__play" id="teaserPlay" type="button" aria-label="Bemutató teaser lejátszása">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-      <div class="hero__loader" id="teaserLoader" hidden>
-        <span class="loader-ring" aria-hidden="true"></span>
-        <span class="loader-txt">Videó betöltése…</span>
-      </div>
+    <!-- Bemutató videó: borítókép, kattintásra a YouTube-videó lightboxban nyílik (mint a portfóliónál) -->
+    <div class="hero__reel grain play-target reveal" data-yt="NSy9nl75Wso" role="button" tabindex="0" aria-label="Bemutató videó lejátszása">
+      <img class="hero__img" src="eskuvoi-videos-imation-wedding-bemutato-borito.jpg" width="1920" height="1080" fetchpriority="high" alt="Imation wedding esküvői videós – a bemutató videó borítóképe">
+      <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
     </div>
   </section>
 
@@ -568,7 +565,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="stat"><div class="stat__num"><b>4K</b></div><div class="stat__label">felbontás</div></div>
         <div class="stat"><div class="stat__num"><b>2</b></div><div class="stat__label">kamerás rögzítés</div></div>
         <div class="stat"><div class="stat__num"><b>24</b> órás</div><div class="stat__label">válaszadás</div></div>
-        <div class="stat"><div class="stat__num"><b>30</b> napos</div><div class="stat__label">átadás</div></div>
+        <div class="stat"><div class="stat__num"><b>4–8</b> hetes</div><div class="stat__label">átadás</div></div>
       </div>
       <div class="feat-strip">
         <span>Drónos felvételek</span>
@@ -616,8 +613,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
         <div class="why__item reveal">
           <div class="why__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h3 class="why__h">Gyors átadás</h3>
-          <p class="why__p">Letölthető felhős átadás; a Dokumentarista csomagnál gyorsított, 2–4 hetes átadással.</p>
+          <h3 class="why__h">Kiszámítható átadás</h3>
+          <p class="why__p">Letölthető felhős átadás: a Highlight csomagnál 6–8, a Dokumentarista csomagnál 4–6 hét alatt.</p>
         </div>
         <div class="why__item reveal">
           <div class="why__icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.3-9.3-9.2C1.2 8.7 3 6 6 6c1.9 0 3.2 1 4 2 .8-1 2.1-2 4-2 3 0 4.8 2.7 3.3 5.8C19 16.7 12 21 12 21z"/></svg></div>
@@ -637,19 +634,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     </div>
     <div class="pf-grid">
       <!-- Egyedi borítóképek; kattintásra a YouTube-videó lightboxban nyílik -->
-      <div class="pf reveal play-target" data-yt="GCR1TmWBOXs" role="button" tabindex="0" aria-label="Zsuzsi és Peti esküvői filmjének lejátszása">
+      <div class="pf reveal play-target" data-yt="VjrKCoY3w5o" role="button" tabindex="0" aria-label="Rebeka és Dani esküvői filmjének lejátszása">
         <div class="pf__frame">
-          <img class="pf__img" src="zsuzsi-es-peti-eskuvoi-video-imation-wedding.jpg" width="1280" height="714" loading="lazy" alt="Zsuzsi &amp; Peti esküvői highlight film – Imation wedding">
+          <img class="pf__img" src="Rebeka_Dani_Highlights.jpg" width="1280" height="720" loading="lazy" alt="Rebeka &amp; Dani esküvői highlight film – Imation wedding">
         </div>
         <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <div class="pf__overlay"><div class="nm">Zsuzsi &amp; Peti</div><div class="ttl">Highlight film</div></div>
+        <div class="pf__overlay"><div class="nm">Rebeka &amp; Dani</div><div class="ttl">Highlight film</div></div>
       </div>
-      <div class="pf reveal play-target" data-yt="VfWWa1saVyQ" role="button" tabindex="0" aria-label="Cintia és Ábel esküvői filmjének lejátszása">
+      <div class="pf reveal play-target" data-yt="jkg4cx8Fcj4" role="button" tabindex="0" aria-label="Kristóf és Dóra esküvői filmjének lejátszása">
         <div class="pf__frame">
-          <img class="pf__img" src="cintia-es-abel-eskuvoi-video-imation-wedding.jpg" width="1280" height="720" loading="lazy" alt="Cintia &amp; Ábel esküvői highlight film – Imation wedding">
+          <img class="pf__img" src="Kristof_Dora_Highlights.jpg" width="1280" height="720" loading="lazy" alt="Kristóf &amp; Dóra esküvői highlight film – Imation wedding">
         </div>
         <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <div class="pf__overlay"><div class="nm">Cintia &amp; Ábel</div><div class="ttl">Highlight film</div></div>
+        <div class="pf__overlay"><div class="nm">Kristóf &amp; Dóra</div><div class="ttl">Highlight film</div></div>
       </div>
     </div>
     <div class="pf-more reveal">
@@ -671,16 +668,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="price reveal">
         <h3 class="price__name">Highlight csomag</h3>
         <p class="price__desc">A profi alapcsomag, amely megörökíti a nap legfontosabb pillanatait elegáns, minőségi formában.</p>
-        <div class="price__amount"><span class="num">299.990</span><span class="cur">Ft</span></div>
+        <div class="price__amount"><s class="old"><span class="sr-only">Eredeti ár: </span>320.000 Ft</s><span class="num sale">300.000</span><span class="cur sale">Ft</span></div>
+        <p class="price__promo"><strong>Akciós ár</strong> az első 10 érdeklődőnek, foglalás esetén. A 20.000 Ft kedvezmény már benne van a feltüntetett árban.</p>
         <ul class="price__list">
-          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Egész napos rendelkezésre állás (hajnali 1-ig)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>14 órás rendelkezésre állás (11:00-tól hajnali 1:00-ig)</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>5–7 perces Highlight film</li>
-          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>A szertartásról és a nyitótáncról külön, teljes videó (2 kamerával rögzítve) — a Highlight film mellett</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Videó a teljes szertartásról</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Videó a teljes nyitótáncról</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>4K videófelvétel</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Drónos felvételek a látványos pillanatokért</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Kreatív videózás az esküvő napján</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Mikroportos hangfelvétel a tiszta hangért</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Videó átadása felhőtárhelyen, letölthető formában</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Várható átadási idő: 6–8 hét</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Biztonsági mentés 12 hónapig</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Budapesten belül ingyenes kiszállás</li>
         </ul>
@@ -692,20 +692,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <span class="price__ribbon">Ajánlott</span>
         <h3 class="price__name">Dokumentarista csomag</h3>
         <p class="price__desc">Az igazi teljes élmény, ahol minden részletre figyelünk, és a videózás igazi kreatív élménnyé válik.</p>
-        <div class="price__amount"><span class="num">359.990</span><span class="cur">Ft</span></div>
+        <div class="price__amount"><s class="old"><span class="sr-only">Eredeti ár: </span>380.000 Ft</s><span class="num sale">360.000</span><span class="cur sale">Ft</span></div>
+        <p class="price__promo"><strong>Akciós ár</strong> az első 10 érdeklődőnek, foglalás esetén. A 20.000 Ft kedvezmény már benne van a feltüntetett árban.</p>
         <ul class="price__list">
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>A Highlight csomag minden szolgáltatása</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>14 órás rendelkezésre állás (11:00-tól hajnali 1:00-ig)</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Hosszabb, dokumentarista film (50–60 perc) a Highlight film mellett</li>
-          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Extra vágások, vendéginterjúk és egyedi részletek beépítése</li>
-          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Gyorsított videóátadás (2–4 hét)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Extra vágások és egyedi részletek beépítése</li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Gyorsított videóátadás (4–6 hét)</li>
           <li><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Elegáns pendrive / díszdobozos átadás</li>
         </ul>
-        <p class="price__note"><strong>Kinek ajánljuk?</strong> Ha szeretnétek minden pillanatot látványosan és személyre szabottan megörökíteni, extra hosszú dokumentációval, vendégüzenetekkel és exkluzív átadási formával.</p>
+        <p class="price__note"><strong>Kinek ajánljuk?</strong> Ha szeretnétek minden pillanatot látványosan és személyre szabottan megörökíteni, extra hosszú dokumentációval és exkluzív átadási formával.</p>
         <a href="#kapcsolat" class="btn btn--solid btn--block" data-order="Dokumentarista">Megrendelem</a>
       </div>
     </div>
 
-    <p class="price-foot">Az árak bruttó forintban értendők. A foglaló összege <strong>50.000 Ft</strong>; a dátum a foglaló beérkezésével rögzül. Budapesten belül a kiszállás díjmentes, azon kívül 110 Ft/km. Vidéki és külföldi helyszínek esetén egyedi árazás, az utazási költségek megbeszélés szerint.</p>
+    <p class="price-foot">Az árak bruttó forintban értendők. Az akciós ár az első 10 érdeklődőre érvényes, és csak foglalás (a foglaló befizetése) esetén. A 20.000 Ft kedvezmény már benne van a feltüntetett akciós árban, azon felül további kedvezmény nem jár. A foglaló összege <strong>50.000 Ft</strong>; a dátum a foglaló beérkezésével rögzül. Budapesten belül a kiszállás díjmentes, azon kívül Budapesttől számítva 120 Ft/km. Külföldi helyszín esetén egyedi árajánlatot adok.</p>
   </section>
 
   <!-- ================= FOLYAMAT ================= -->
@@ -713,7 +715,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="center reveal">
       <p class="eyebrow">A folyamat</p>
       <h2 class="h-section">A megkereséstől a kész filmig</h2>
-      <p class="lead">Négy átlátható lépés, hogy pontosan tudjátok, mi és mikor történik.</p>
+      <p class="lead">Öt átlátható lépés, hogy pontosan tudjátok, mi és mikor történik.</p>
       <span class="rule"></span>
     </div>
     <div class="proc-grid">
@@ -834,7 +836,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <h3>Elérhetőségek</h3>
         <div class="ci-row">
           <span class="lbl">E-mail</span>
-          <a class="val" href="mailto:hello@imationwedding.hu">hello@imationwedding.hu</a>
+          <a class="val" href="mailto:eskuvovideos@gmail.com">eskuvovideos@gmail.com</a>
         </div>
         <div class="ci-row">
           <span class="lbl">Telefon</span>
@@ -844,7 +846,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <span class="lbl">Szolgáltatási terület</span>
           <span class="val">Budapest és egész Magyarország · külföld egyedi árazással</span>
         </div>
-        <p class="ci-travel">Budapesten belül a kiszállás díjmentes (Budapesten kívül 110 Ft/km). Vidéki és külföldi helyszínek esetén egyedi árazás, az utazási költségek megbeszélés szerint.</p>
+        <p class="ci-travel">Budapesten belül a kiszállás díjmentes, azon kívül Budapesttől számítva 120 Ft/km. Külföldi helyszín esetén egyedi árajánlatot adok.</p>
       </aside>
     </div>
   </section>
@@ -861,7 +863,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="faq-wrap reveal">
       <details class="faq">
         <summary>Milyen időtartamra érhető el a szolgáltatás?<span class="ic"></span></summary>
-        <div class="faq__body">Alapesetben 10:00–01:00 (következő nap) között dolgozom. Ettől eltérő igény egyedi megállapodással lehetséges.</div>
+        <div class="faq__body">Alapesetben 11:00-tól hajnali 1:00-ig, 14 órán át dolgozom. Ettől eltérő igény egyedi megállapodással lehetséges.</div>
       </details>
       <details class="faq">
         <summary>Kell foglalót fizetni?<span class="ic"></span></summary>
@@ -873,11 +875,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </details>
       <details class="faq">
         <summary>Mennyi a kiszállási díj?<span class="ic"></span></summary>
-        <div class="faq__body">Budapest közigazgatási határán belül díjmentes. Azon kívül 110 Ft/km (oda-vissza); parkolás és útdíj — ha felmerül — külön egyeztetés szerint.</div>
+        <div class="faq__body">Budapest közigazgatási határán belül díjmentes. Azon kívül Budapesttől számítva 120 Ft/km (oda-vissza); parkolás és útdíj — ha felmerül — külön egyeztetés szerint. Külföldi helyszín esetén egyedi árajánlatot adok.</div>
       </details>
       <details class="faq">
         <summary>Mennyi idő alatt készül el a film?<span class="ic"></span></summary>
-        <div class="faq__body">Az utómunka (válogatás, vágás) legfeljebb 6 hét az esküvőt követően. A Dokumentarista csomagnál gyorsított, 2–4 hetes átadással.</div>
+        <div class="faq__body">Az utómunka (válogatás, vágás) után a Highlight csomag várható átadási ideje 6–8 hét, a Dokumentarista csomagé gyorsítottan 4–6 hét az esküvőt követően.</div>
       </details>
       <details class="faq">
         <summary>Megkapom a nyersanyagot (vágatlan felvételeket)?<span class="ic"></span></summary>
@@ -905,7 +907,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <footer class="foot">
   <div class="foot__inner">
     <div class="foot__col">
-      <a class="email" href="mailto:hello@imationwedding.hu">hello@imationwedding.hu</a>
+      <a class="email" href="mailto:eskuvovideos@gmail.com">eskuvovideos@gmail.com</a>
     </div>
     <div class="foot__center">
       <span class="foot__brand">IMATION<small>wedding</small></span>
@@ -922,6 +924,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <a href="#" data-open="impresszum">Impresszum</a>
     <a href="#" data-open="gdpr">Adatkezelési tájékoztató</a>
     <a href="#" data-open="aszf">ÁSZF</a>
+    <a href="#" id="cookieSettings">Süti-beállítások</a>
     <a href="#top">Vissza a tetejére</a>
   </div>
 </footer>
@@ -943,13 +946,22 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <h3 id="impr-h">Impresszum</h3>
     <dl class="modal__dl">
       <dt>Szolgáltató</dt><dd>Pátrovics Gábor (egyéni vállalkozó)</dd>
-      <dt>Kapcsolat</dt><dd><a href="mailto:hello@imationwedding.hu">hello@imationwedding.hu</a></dd>
+      <dt>Kapcsolat</dt><dd><a href="mailto:eskuvovideos@gmail.com">eskuvovideos@gmail.com</a></dd>
       <dt>Székhely</dt><dd>2440 Százhalombatta, Erkel Ferenc krt 30. 4/3, Magyarország</dd>
       <dt>Nyilv. szám</dt><dd>61085673</dd>
       <dt>Adószám</dt><dd>91411282133</dd>
-      <dt>Tárhely</dt><dd><a href="https://www.rackhost.hu/" target="_blank" rel="noopener">www.rackhost.hu</a></dd>
+      <dt>Tárhely</dt><dd>GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA · <a href="https://support.github.com" target="_blank" rel="noopener">support.github.com</a></dd>
     </dl>
     <button class="btn btn--ghost btn--sm modal__close" data-close>Rendben</button>
+  </div>
+</div>
+
+<!-- ================= SÜTI-HOZZÁJÁRULÁS ================= -->
+<div class="cookie" id="cookieBar" role="region" aria-label="Süti-beállítások" hidden>
+  <p>Az oldal látogatottságát a Google Analytics segítségével mérem, amely sütiket használ. Hozzájárulsz? <a href="#" data-open="gdpr">Részletek</a></p>
+  <div class="cookie__btns">
+    <button class="btn btn--ghost btn--sm" type="button" id="cookieReject">Elutasítom</button>
+    <button class="btn btn--ghost btn--sm" type="button" id="cookieAccept">Elfogadom</button>
   </div>
 </div>
 
@@ -957,15 +969,44 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div class="modal" id="modal-gdpr" aria-hidden="true">
   <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="gdpr-h">
     <h3 id="gdpr-h">Adatkezelési tájékoztató</h3>
-    <p>Az űrlapon megadott személyes adatokat (név, e-mail, telefonszám, esküvő dátuma) kizárólag ajánlatadás és kapcsolattartás céljából használom fel.</p>
+    <p class="modal__sub">Hatályos: 2026.10.21</p>
+
+    <h4>Adatkezelő</h4>
+    <p>Pátrovics Gábor egyéni vállalkozó (Imation wedding) · 2440 Százhalombatta, Erkel Ferenc krt 30. 4/3 · Adószám: 91411282133 · E-mail: <a href="mailto:eskuvovideos@gmail.com">eskuvovideos@gmail.com</a></p>
+
+    <h4>1. Ajánlatkérés és kapcsolattartás</h4>
     <ul>
-      <li><strong>Adatkezelő:</strong> Imation wedding</li>
-      <li><strong>Jogalap:</strong> GDPR 6. cikk (1) b) – szerződéskötést megelőző lépések</li>
-      <li><strong>Tárolás ideje:</strong> ajánlatadástól számított legfeljebb 12 hónap</li>
-      <li><strong>Adatfeldolgozó:</strong> Formspree (űrlapküldés). Az adatok továbbításra kerülnek az e-mail kézbesítéséhez.</li>
-      <li><strong>Jogok:</strong> hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás – kérelem: <a href="mailto:hello@imationwedding.hu">hello@imationwedding.hu</a></li>
+      <li><strong>Kezelt adatok:</strong> név, e-mail-cím, telefonszám (nem kötelező), az esküvő dátuma, az üzenet tartalma.</li>
+      <li><strong>Cél:</strong> ajánlatadás, kapcsolattartás, a szerződés előkészítése.</li>
+      <li><strong>Jogalap:</strong> GDPR 6. cikk (1) b) – szerződéskötést megelőző lépések.</li>
+      <li><strong>Tárolás ideje:</strong> az ajánlatadástól számított legfeljebb 12 hónap; szerződéskötés esetén a szerződés teljesítéséig, a számlázáshoz szükséges adatokat a jogszabályban előírt ideig.</li>
     </ul>
-    <p>Egyedi kérés esetén írj a fenti elérhetőségre.</p>
+
+    <h4>2. Látogatottságmérés (sütik)</h4>
+    <ul>
+      <li><strong>Eszköz:</strong> Google Analytics 4 és Google Tag Manager (Google Ireland Limited).</li>
+      <li><strong>Kezelt adatok:</strong> álnevesített használati adatok (megtekintett oldalak, kattintások, eszköz- és böngészőtípus, hozzávetőleges földrajzi hely) és sütiazonosítók.</li>
+      <li><strong>Cél:</strong> az oldal látogatottságának mérése és fejlesztése.</li>
+      <li><strong>Jogalap:</strong> hozzájárulás – GDPR 6. cikk (1) a). A mérés csak a süti-sávon adott „Elfogadom” után indul el. A hozzájárulás bármikor visszavonható az oldal alján található „Süti-beállítások” linken.</li>
+      <li><strong>Tárolás ideje:</strong> a sütik legfeljebb 2 évig, az analitikai adatok legfeljebb 14 hónapig maradnak meg.</li>
+    </ul>
+
+    <h4>3. Videólejátszás</h4>
+    <p>A bemutató videó és a portfólióvideók a YouTube adatvédelmi módú (youtube-nocookie.com) lejátszójával jelennek meg: a YouTube csak akkor kap adatot (pl. IP-cím), amikor elindítasz egy videót.</p>
+
+    <h4>4. Adatfeldolgozók</h4>
+    <ul>
+      <li><strong>Formspree, Inc.</strong> (USA) – az űrlapon küldött üzenetek kézbesítése.</li>
+      <li><strong>Google</strong> – e-mail-fiók (Gmail), Google Analytics, YouTube.</li>
+      <li><strong>GitHub, Inc.</strong> (USA) – a weboldal tárhelye; a szerver a biztonságos működéshez technikai naplót (pl. IP-cím) rögzíthet.</li>
+    </ul>
+    <p>Az USA-ba történő adattovábbítás az érintett szolgáltatók által alkalmazott megfelelő garanciák (az EU–USA adatvédelmi keretrendszer, illetve az Európai Bizottság általános szerződési feltételei) alapján történik.</p>
+
+    <h4>5. Jogaid</h4>
+    <ul>
+      <li>Hozzáférés, helyesbítés, törlés, korlátozás, adathordozhatóság, tiltakozás, valamint a hozzájárulás visszavonása. Kérelem: <a href="mailto:eskuvovideos@gmail.com">eskuvovideos@gmail.com</a> – válasz legfeljebb 1 hónapon belül.</li>
+      <li>Panasz: Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH), 1055 Budapest, Falk Miksa utca 9–11., <a href="https://www.naih.hu" target="_blank" rel="noopener">www.naih.hu</a>; emellett bírósághoz is fordulhatsz.</li>
+    </ul>
     <button class="btn btn--ghost btn--sm modal__close" data-close>Rendben</button>
   </div>
 </div>
@@ -974,28 +1015,28 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div class="modal" id="modal-aszf" aria-hidden="true">
   <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="aszf-h">
     <h3 id="aszf-h">Általános Szerződési Feltételek (ÁSZF)</h3>
-    <p class="modal__sub">Verzió/dátum: 2025.10.01</p>
+    <p class="modal__sub">Verzió/dátum: 2026.10.21</p>
 
     <h4>1. Szolgáltató adatai</h4>
-    <p>Név: Pátrovics Gábor · Székhely/levelezés: 2440 Százhalombatta, Erkel Ferenc krt 30. 4/3 · Nyilvántartási szám: 61085673 · Adószám: 91411282133 · E-mail: hello@imationwedding.hu · Telefon: emailes kapcsolatfelvétel után · Tárhely: www.rackhost.hu</p>
+    <p>Név: Pátrovics Gábor · Székhely/levelezés: 2440 Százhalombatta, Erkel Ferenc krt 30. 4/3 · Nyilvántartási szám: 61085673 · Adószám: 91411282133 · E-mail: eskuvovideos@gmail.com · Telefon: emailes kapcsolatfelvétel után · Tárhely: GitHub, Inc. (GitHub Pages), 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</p>
 
     <h4>2. Fogalmak, hatály</h4>
-    <p>Esküvői fotó és/vagy videó szolgáltatások. Ajánlat: e-mailben küldött részletes szolgáltatás- és díjleírás. Szerződés: az Ajánlat és jelen ÁSZF kifejezett e-mailes elfogadásával jön létre.</p>
+    <p>Szolgáltatás: esküvői videós szolgáltatás (videófelvétel készítése és utómunkája). Ajánlat: e-mailben küldött részletes szolgáltatás- és díjleírás. Szerződés: az Ajánlat és jelen ÁSZF kifejezett e-mailes elfogadásával jön létre.</p>
 
     <h4>3. Szerződéskötés</h4>
-    <p>Elfogadás minta: „Elfogadom az ajánlatot és a 2025.10.01 dátumú ÁSZF-et.” A Szolgáltató e-mailben visszaigazol.</p>
+    <p>Elfogadás minta: „Elfogadom az ajánlatot és a 2026.10.21 dátumú ÁSZF-et.” A Szolgáltató e-mailben visszaigazol.</p>
 
     <h4>4. Teljesítés, rendelkezésre állás, átadás</h4>
-    <p>Rendelkezésre állás: 10:00–01:00 (köv. nap). A csomag tartalma az Ajánlatban szerepel. Átadás: felhőlink/USB, link érvényesség: 12 hónap. A drón a csomag része, ha a helyszín, az időjárás és a jogszabály engedi. A szerződés a szolgáltatás teljesítésére kötelez; a Szolgáltató garantálja, hogy az adott időpontban szerződésszerűen teljesít.</p>
+    <p>Rendelkezésre állás: 11:00–01:00 (köv. nap), összesen 14 óra. A csomag tartalma az Ajánlatban szerepel. Átadás: felhőlink/USB, link érvényesség: 12 hónap. A drón a csomag része, ha a helyszín, az időjárás és a jogszabály engedi. A szerződés a szolgáltatás teljesítésére kötelez; a Szolgáltató garantálja, hogy az adott időpontban szerződésszerűen teljesít.</p>
 
     <h4>5. Díjak, fizetés, foglaló</h4>
     <p>Árak bruttó HUF. Fizetés: készpénz vagy átutalás (a foglaló és a végösszeg is). Foglaló: 50.000 Ft – a dátum a foglaló beérkezésével rögzül.</p>
 
     <h4>6. Lemondás / elállás / felmondás – foglaló</h4>
-    <p>Megrendelő lemondásakor a foglaló nem jár vissza, a lemondás okától függetlenül. Szolgáltató lemondásakor a foglaló kétszeresét téríti vissza. (Jogi megjegyzés: vis maior esetére a jogszabály eltérő rendelkezéseket írhat elő.)</p>
+    <p>Megrendelő lemondásakor a foglaló nem jár vissza, a lemondás okától függetlenül. Szolgáltató lemondásakor a foglaló kétszeresét téríti vissza. Vis maior (a felek érdekkörén kívül eső, elháríthatatlan ok) esetén a felek egymást haladéktalanul értesítik, és a Polgári Törvénykönyv rendelkezései szerint járnak el.</p>
 
     <h4>7. Kiszállás, utazás, ellátás</h4>
-    <p>Budapest közig. határán belül díjmentes kiszállás; azon kívül 110 Ft/km (oda-vissza), parkolás/útdíj külön. A Szolgáltató saját gépjárművel érkezik, kizárólag saját eszközeit és munkatársait szállítja. A Megrendelő az esküvő napján a fotós/videós számára a vendégekkel azonos színvonalú ellátást (étel-ital) biztosít.</p>
+    <p>Budapest közig. határán belül díjmentes kiszállás; azon kívül Budapesttől számítva 120 Ft/km (oda-vissza), parkolás/útdíj külön; külföldi helyszín esetén egyedi árajánlat alapján. A Szolgáltató saját gépjárművel érkezik, kizárólag saját eszközeit és munkatársait szállítja. A Megrendelő az esküvő napján a videós számára a vendégekkel azonos színvonalú ellátást (étel-ital) biztosít.</p>
 
     <h4>8. Rögzítés jellege, együttműködés</h4>
     <p>A Szolgáltató törekszik minden fontos esemény rögzítésére, de nem felel azért, ha egyes jelenetek részlegesen hiányoznak vagy nem rögzíthetők (pl. szervezési, hozzáférési vagy emberi tényezők). A Megrendelő együttműködése szükséges (belépés, időzítés, koordináció).</p>
@@ -1004,13 +1045,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <p>A Megrendelő vállalja, hogy előzetesen tájékoztatja a vendégeket arról, hogy az eseményen kép- és hangrögzítés történik.</p>
 
     <h4>10. Anyagok átadása, utómunka, javítás</h4>
-    <p>Utómunka (válogatás, szerkesztés/vágás): max. 6 hét az esküvőt követően. Átadás felhőlinken (12 hónap), igény szerint pendrive-on is. A pendrive 3 hónapon belül gyártási hiba esetén ingyen cserélhető (a hibás eszközt vissza kell juttatni). A kész anyag átvételétől számított 1 hónapon belül egyszeri díjmentes javítás kérhető; ezt követően minden további javítás: 40.000 Ft/alkalom.</p>
+    <p>Utómunka (válogatás, szerkesztés/vágás), várható átadási idő az esküvőt követően: Highlight csomag 6–8 hét, Dokumentarista csomag 4–6 hét. Átadás felhőlinken (12 hónap), igény szerint pendrive-on is. A pendrive 3 hónapon belül gyártási hiba esetén ingyen cserélhető (a hibás eszközt vissza kell juttatni). A kész anyag átvételétől számított 1 hónapon belül egyszeri díjmentes javítás kérhető; ezt követően minden további javítás: 40.000 Ft/alkalom.</p>
 
     <h4>11. Szerzői jog, felhasználás</h4>
     <p>A kész anyagok szerzői joga a Szolgáltatót illeti. A Megrendelő magáncélú, nem kizárólagos, korlátlan felhasználási engedélyt kap; a kereskedelmi felhasználás külön engedéllyel és díjjal lehetséges. Portfólió/közösségi média megjelenés méltányosan; korlátozás egyedi megállapodással.</p>
 
     <h4>12. Panasz, jogvita</h4>
-    <p>Panasz: hello@imationwedding.hu (válasz 30 napon belül). Békéltető Testület: székhely szerint illetékes. Irányadó jog: magyar jog, illetékes bíróság a Pp. szerint.</p>
+    <p>Panasz: eskuvovideos@gmail.com (válasz 30 napon belül). Fogyasztói jogvita esetén a Megrendelő a Pest Vármegyei Békéltető Testülethez (1055 Budapest, Balassi Bálint utca 25. IV/2., <a href="mailto:pmbekelteto@pmkik.hu">pmbekelteto@pmkik.hu</a>, <a href="https://www.panaszrendezes.hu" target="_blank" rel="noopener">www.panaszrendezes.hu</a>) vagy a lakóhelye szerint illetékes békéltető testülethez fordulhat. Irányadó jog: magyar jog, illetékes bíróság a Pp. szerint.</p>
 
     <h4>13. Technika, felelősség</h4>
     <p>Tartalék eszközök és adatmentés mellett a drón üzemeltetése időjárás- és jogszabályfüggő; akadály esetén ez nem minősül hibás teljesítésnek, külön díj nem számítandó. A felelősség a bizonyított közvetlen kárra és legfeljebb a vállalkozói díj összegére korlátozott.</p>
@@ -1124,42 +1165,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   /* Esc closes lightbox + modals */
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeVideo(); closeModals(); } });
 
-  /* ---- HERO helyi teaser videó (lazy: csak kattintásra tölt, spinnerrel; natív vezérlőkkel némítható) ---- */
-  (function(){
-    var wrap=document.getElementById('teaserWrap');
-    if(!wrap) return;
-    var video=document.getElementById('teaserVideo');
-    var playBtn=document.getElementById('teaserPlay');
-    var loader=document.getElementById('teaserLoader');
-
-    function showLoader(){ loader.hidden=false; }
-    function hideLoader(){ loader.hidden=true; }
-
-    playBtn.addEventListener('click', function(){
-      playBtn.hidden=true;
-      showLoader();
-      video.setAttribute('controls','');   /* natív vezérlők: némítás, hangerő, teljes képernyő, tekerés */
-      var p=video.play();
-      if(p && p.catch){
-        p.catch(function(){ hideLoader(); playBtn.hidden=false; video.removeAttribute('controls'); });
-      }
-    });
-
-    /* töltés / pufferelés visszajelzés */
-    video.addEventListener('waiting', showLoader);
-    video.addEventListener('playing', hideLoader);
-    video.addEventListener('canplay', hideLoader);
-    video.addEventListener('error', hideLoader);
-
-    /* a videó végén vissza a poszterhez, újra lejátszható */
-    video.addEventListener('ended', function(){
-      video.removeAttribute('controls');
-      hideLoader();
-      video.load();          /* preload="none" → visszaáll a poszterképre */
-      playBtn.hidden=false;
-    });
-  })();
-
   /* ---- Vélemények: hosszú szöveg levágása + "Tovább" kinyitás ---- */
   (function(){
     var cards=document.querySelectorAll('.tst__card');
@@ -1183,12 +1188,45 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     window.addEventListener('resize', checkClamp);
   })();
 
+  /* ---- Süti-hozzájárulás sáv ---- */
+  (function(){
+    var bar=document.getElementById('cookieBar'); if(!bar) return;
+    function get(){ try{ return localStorage.getItem('cookieConsent'); }catch(e){ return null; } }
+    function set(v){ try{ localStorage.setItem('cookieConsent', v); }catch(e){} }
+    if(!get()) bar.hidden=false;
+    document.getElementById('cookieAccept').addEventListener('click', function(){
+      set('accepted'); bar.hidden=true; if(window.loadAnalytics) window.loadAnalytics();
+    });
+    document.getElementById('cookieReject').addEventListener('click', function(){
+      set('rejected'); bar.hidden=true; if(window.gtag) gtag('consent','update',{analytics_storage:'denied'});
+    });
+    var st=document.getElementById('cookieSettings');
+    if(st) st.addEventListener('click', function(e){ e.preventDefault(); bar.hidden=false; });
+  })();
+
   /* ---- price "Megrendelem" prefills the message ---- */
   document.querySelectorAll('[data-order]').forEach(function(b){
     b.addEventListener('click', function(){
       var pkg=b.getAttribute('data-order');
       var msg=document.getElementById('f-message');
-      if(msg){ msg.value='Szeretném megrendelni a(z) '+pkg+' csomagot. '; }
+      if(!msg) return;
+      var re=/Szeretnénk megrendelni a \S+ csomagot\./;
+      /* ha már ott a sablon, csak a csomag nevét cseréljük; ha saját szöveg van, nem nyúlunk hozzá */
+      if(re.test(msg.value)){ msg.value=msg.value.replace(re,'Szeretnénk megrendelni a '+pkg+' csomagot.'); return; }
+      if(msg.value.trim()!=='') return;
+      var first='Esküvő helyszíne: ';
+      msg.value='Kedves Gábor!\n\n'+
+        'Szeretnénk megrendelni a '+pkg+' csomagot.\n\n'+
+        first+'\n'+
+        'Vendégek várható létszáma: \n'+
+        'Elképzeléseink, kéréseink (stílus, fontos pillanatok, zene): \n\n'+
+        'Köszönjük, várjuk a válaszod!';
+      msg.style.minHeight='14rem';
+      /* a kurzor a helyszín mezőbe kerül, hogy rögtön lehessen gépelni */
+      setTimeout(function(){
+        var pos=msg.value.indexOf(first)+first.length;
+        try{ msg.focus({preventScroll:true}); msg.setSelectionRange(pos,pos); }catch(e){}
+      }, 700);
     });
   });
 
@@ -1208,12 +1246,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
             status.textContent='Köszönöm! Az üzeneted megérkezett — 24 órán belül válaszolok.';
           } else {
             status.style.color='#b4452f';
-            status.textContent='Hiba történt a küldés során. Írj közvetlenül: hello@imationwedding.hu';
+            status.textContent='Hiba történt a küldés során. Írj közvetlenül: eskuvovideos@gmail.com';
           }
         })
         .catch(function(){
           status.style.color='#b4452f';
-          status.textContent='Hiba történt a küldés során. Írj közvetlenül: hello@imationwedding.hu';
+          status.textContent='Hiba történt a küldés során. Írj közvetlenül: eskuvovideos@gmail.com';
         });
     });
   }
